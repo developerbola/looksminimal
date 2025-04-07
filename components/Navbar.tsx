@@ -6,7 +6,9 @@ import Image from "next/image";
 const Navbar = () => {
   const router = useRouter();
   return (
-    <div className={`h-20 fixed w-full flex items-center justify-between px-12 backdrop-blur`}>
+    <div
+      className={`h-20 fixed w-full flex items-center justify-between px-12 backdrop-blur`}
+    >
       <div
         className="flex items-center gap-2 cursor-pointer"
         onClick={() => router.push("/")}
@@ -21,7 +23,7 @@ const Navbar = () => {
           Guides
         </Link>
         <Link
-          href="/guides"
+          href="https://github.com/developerbola/hashnote"
           className="cursor-pointer flex items-center"
         >
           <Image

@@ -16,7 +16,7 @@ const Guides = () => {
         </div>
 
         {/* Guides Section */}
-        <div className="flex flex-col gap-6 mt-3 guides">
+        <div className="flex flex-col gap-6 guides">
           {/* Dynamic back */}
           <div className="space-y-3">
             <h3 className="text-xl font-semibold">Dynamic back</h3>

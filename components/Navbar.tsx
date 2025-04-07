@@ -22,6 +22,9 @@ const Navbar = () => {
         <Link href="/guides" className="cursor-pointer">
           Guides
         </Link>
+        <Link href="/privacy" className="cursor-pointer">
+          Privacy
+        </Link>
         <Link
           href="https://github.com/developerbola/hashnote"
           className="cursor-pointer flex items-center"

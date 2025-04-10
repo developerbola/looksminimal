@@ -1,6 +1,30 @@
+"use client"
 import Image from "next/image";
 
 const HeroSection = () => {
+  const handleDownload = () => {
+    const fileName = "Hashnote-1.0.0.dmg";
+
+    navigator.sendBeacon(
+      "https://hook.eu2.make.com/k4871v3pb83ixp3hvy9nmxxq6pkiiz67",
+      JSON.stringify({
+        file: fileName,
+        timestamp: new Date().toISOString(),
+        page: window.location.href,
+        userAgent: navigator.userAgent,
+      })
+    );
+
+    const link = document.createElement("a");
+    link.href =
+      "https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg";
+    link.download = fileName;
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10">
       {/* Left Side - App Image */}
@@ -27,14 +51,13 @@ const HeroSection = () => {
           with markdown editor, and a minimal UI.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a
-            target="_blank"
-            download={"Hashnote-1.0.0.dmg"}
-            href="https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg"
+          <button
+            onClick={handleDownload}
             className="bg-white text-black px-6 py-3 rounded-xl font-medium transition"
           >
             Download Now
-          </a>
+          </button>
+
           <a href="/guides" className="px-6 py-3 font-medium">
             Read the Guide
           </a>

@@ -1,15 +1,19 @@
-"use client"
+"use client";
 import Image from "next/image";
 
 const HeroSection = () => {
   const handleDownload = () => {
     const fileName = "Hashnote-1.0.0.dmg";
+    const timestamp = new Date().toISOString();
+
+    // Add a unique identifier (e.g., timestamp) to the URL
+    const uniqueURL = `https://hook.eu2.make.com/k4871v3pb83ixp3hvy9nmxxq6pkiiz67?timestamp=${timestamp}`;
 
     navigator.sendBeacon(
-      "https://hook.eu2.make.com/k4871v3pb83ixp3hvy9nmxxq6pkiiz67",
+      uniqueURL,
       JSON.stringify({
         file: fileName,
-        timestamp: new Date().toISOString(),
+        timestamp: timestamp,
         page: window.location.href,
         userAgent: navigator.userAgent,
       })

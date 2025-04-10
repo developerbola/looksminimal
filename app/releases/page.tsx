@@ -13,7 +13,7 @@ const Releases = () => {
                   date: "Apr 10, 2025",
                   version: "v1.0.0",
                   notes:
-                    "Initial release with markdown editing, tagging, and local file storage.",
+                    "First release for Hashnote.",
                 },
               ].map(({ date, version, notes }) => (
                 <div key={version} className="flex gap-10 items-start">

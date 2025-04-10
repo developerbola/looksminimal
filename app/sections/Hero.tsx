@@ -30,7 +30,7 @@ const HeroSection = () => {
           <a
             target="_blank"
             download={"Hashnote-1.0.0.dmg"}
-            href="https://hashnoteapp.vercel.app/download/Hashnote-1.0.0.dmg"
+            href="https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg"
             className="bg-white text-black px-6 py-3 rounded-xl font-medium transition"
           >
             Download Now

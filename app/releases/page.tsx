@@ -10,7 +10,7 @@ const Releases = () => {
             <div className="space-y-6">
               {[
                 {
-                  date: "Feb 13, 2025",
+                  date: "April 10, 2025",
                   version: "v1.0.0",
                   notes:
                     "Initial release with markdown editing, tagging, and local file storage.",

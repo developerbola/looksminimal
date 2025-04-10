@@ -1,20 +1,16 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 const Navbar = () => {
-  const router = useRouter();
   return (
     <div
       className={`h-20 fixed w-full flex items-center justify-between px-12 backdrop-blur`}
     >
-      <div
-        className="flex items-center gap-2 cursor-pointer"
-        onClick={() => router.push("/")}
-      >
+      <Link href="/" className="flex items-center gap-2 cursor-pointer">
         <h2 className="text-2xl">Hashnote</h2>
-      </div>
+      </Link>
+
       <div className="flex gap-6">
         <Link href="/about" className="cursor-pointer">
           About
@@ -24,6 +20,9 @@ const Navbar = () => {
         </Link>
         <Link href="/privacy" className="cursor-pointer">
           Privacy
+        </Link>
+        <Link href="/releases" className="cursor-pointer">
+          Releases
         </Link>
         <Link
           href="https://github.com/developerbola/hashnote"

@@ -10,6 +10,8 @@ const HeroSection = () => {
           alt="Hashnote App Preview"
           width={600}
           height={600}
+          priority
+          unoptimized
         />
       </div>
 
@@ -26,7 +28,9 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <a
-            href="#download"
+            target="_blank"
+            download={"Hashnote-1.0.0.dmg"}
+            href="https://hashnoteapp.vercel.app/download/Hashnote-1.0.0.dmg"
             className="bg-white text-black px-6 py-3 rounded-xl font-medium transition"
           >
             Download Now

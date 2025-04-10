@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div className="w-full flex justify-center pt-5">
       <div className="w-[60%]">
-        <div className="flex">
+        <div className="flex items-center gap-1">
           <h1 className="text-[32px]">Hashnote</h1>
           <img src="/logo.svg" alt="hashnote logo" height={50} width={50} />
         </div>

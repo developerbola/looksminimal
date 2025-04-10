@@ -23,8 +23,7 @@ const Guides = () => {
             <div className="space-y-2">
               <p>
                 You can navigate back to the home screen by swiping left with
-                two fingers. This feature is available both here and in the
-                editor.
+                two fingers.
               </p>
               <p>
                 Additionally, in the settings panel, your username and token are

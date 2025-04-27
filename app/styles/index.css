@@ -11,6 +11,10 @@ html {
   color: #fff;
 }
 
+body {
+  min-height: 100vh;
+}
+
 blockquote {
   padding: 5px 15px;
   border-left: 2px solid #fff;

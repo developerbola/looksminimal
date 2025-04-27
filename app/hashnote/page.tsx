@@ -1,39 +1,67 @@
-"use client";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const Hashnote = () => {
-  const handleDownload = () => {
-    const fileName = "Hashnote-1.0.0.dmg";
-    const timestamp = new Date().toISOString();
+export const metadata: Metadata = {
+  title: "LooksMinimal | Hashnote",
+  icons: "/hashnote.svg",
+};
 
-    // Add a unique identifier (e.g., timestamp) to the URL
-    const uniqueURL = `https://hook.eu2.make.com/k4871v3pb83ixp3hvy9nmxxq6pkiiz67?timestamp=${timestamp}`;
+const Hashnote = async () => {
+  const stars = await getStars();
 
-    navigator.sendBeacon(
-      uniqueURL,
-      JSON.stringify({
-        file: fileName,
-        timestamp: timestamp,
-        page: window.location.href,
-        userAgent: navigator.userAgent,
-      })
-    );
-
-    const link = document.createElement("a");
-    link.href =
-      "https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg";
-    link.download = fileName;
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = () => {
+  //   const fileName = "Hashnote-1.0.0.dmg";
+  //   const link = document.createElement("a");
+  //   link.href =
+  //     "https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg";
+  //   link.download = fileName;
+  //   link.target = "_blank";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10">
-      {/* Left Side - App Image */}
-      <div className="w-full md:w-1/2 flex justify-center">
+    <section className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-16 py-16 md:py-24 gap-6 md:gap-10 lg:gap-16">
+      {/* Content Side */}
+      <div className="w-full md:w-1/2 text-left flex flex-col items-center md:items-start">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+          Fast. Minimal. Markdown-friendly.
+        </h1>
+
+        <div className="text-lg sm:text-xl md:text-2xl mb-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+          <span>Free & Open source.</span>
+          <Link href="https://github.com/developerbola/hashnote">
+            <button className="inline-flex items-center gap-1 rounded-lg border border-gray-800 bg-slate-950 px-2 py-1 sm:px-3 sm:py-1.5 text-sm font-medium text-gray-300 transition hover:bg-slate-800">
+              ⭐ Give Star{" "}
+              <span style={{ fontFamily: "var(--font-jetbrains)" }}>
+                {stars}
+              </span>
+            </button>
+          </Link>
+        </div>
+
+        <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 md:mb-8 max-w-xl">
+          Hashnote helps you write, manage, and organize your notes effortlessly
+          with markdown editor, and a minimal UI.
+        </p>
+
+        <div className="flex gap-3 sm:gap-4 w-full xs:w-auto justify-center md:justify-start items-center">
+          <button className="bg-white text-black px-5 sm:px-7 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium whitespace-nowrap hover:bg-gray-100 max-w-72">
+            Try now
+          </button>
+          <a
+            href="/hashnote/guides"
+            className="px-4 sm:px-6 py-2 sm:py-3 font-medium text-gray-300 hover:underline text-center whitespace-nowrap"
+          >
+            See features
+          </a>
+        </div>
+      </div>
+
+      {/* Image Side */}
+      <div className="w-full md:w-1/2 sm:flex hidden justify-center md:justify-start lg:justify-center order-2 md:order-1">
         <Image
           src="/preview.png"
           alt="Hashnote App Preview"
@@ -41,45 +69,29 @@ const Hashnote = () => {
           height={600}
           priority
           unoptimized
+          className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[600px] h-auto rounded-xl shadow-lg"
         />
-      </div>
-
-      {/* Right Side - Text Content */}
-      <div className="w-full md:w-1/2 text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Fast. Minimal. Markdown-friendly.
-          <br />
-          <span className="text-2xl">Free & Open source.</span>
-        </h1>
-        <p className="text-gray-600 text-lg mb-8">
-          Hashnote helps you write, manage, and organize your notes effortlessly
-          with markdown editor, and a minimal UI.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <button
-            onClick={handleDownload}
-            className="bg-white text-black px-6 py-3 rounded-xl font-medium transition"
-          >
-            Download Now
-          </button>
-          <a href="/hashnote/guides" className="px-6 py-3 font-medium">
-            Read the Guide
-          </a>
-          <Link
-            href="https://github.com/developerbola/hashnote"
-            className="cursor-pointer flex items-center"
-          >
-            <Image
-              src={"/icons/github.svg"}
-              alt="github icon"
-              width={20}
-              height={20}
-            />
-          </Link>
-        </div>
       </div>
     </section>
   );
 };
 
 export default Hashnote;
+
+async function getStars() {
+  const res = await fetch(
+    "https://api.github.com/repos/developerbola/hashnote",
+    {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
+      },
+      // Next.js App Router specific revalidation (optional)
+      next: { revalidate: 3600 }, // revalidate every hour
+    }
+  );
+
+  if (!res.ok) return 0;
+
+  const data = await res.json();
+  return data.stargazers_count;
+}

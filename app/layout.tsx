@@ -3,10 +3,10 @@ import "./styles/index.css";
 import Navbar from "@/components/Navbar";
 import { Montserrat } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
-
+import { LinksProvider } from "./context/LinksProvider";
 export const metadata: Metadata = {
-  title: "Hashnote",
-  description: "Minimalist note taking app.",
+  title: "LooksMinimal",
+  description: "Minimalistic builded apps.",
   icons: "/logo.svg",
 };
 
@@ -25,15 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* <script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-        /> */}
-      </head>
       <body className={`${jetbrains.variable} ${montserrat.className}`}>
-        <Navbar />
-        <div className="px-16 pt-20">{children}</div>
+        <LinksProvider>
+          <Navbar />
+          <div className="px-16 pt-20">{children}</div>
+        </LinksProvider>
       </body>
     </html>
   );

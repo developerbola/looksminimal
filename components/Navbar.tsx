@@ -1,40 +1,34 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import { useLinks } from "@/app/context/LinksProvider";
 
 const Navbar = () => {
+  const { links, breadcrumb } = useLinks();
   return (
     <div
       className={`h-20 fixed w-full flex items-center justify-between px-12 backdrop-blur`}
     >
-      <Link href="/" className="flex items-center gap-2 cursor-pointer">
-        <h2 className="text-2xl">Hashnote</h2>
-      </Link>
+      <div className="flex items-center gap-2 ">
+        <Link href="/" className="cursor-pointer">
+          <h2 className={`text-2xl ${breadcrumb ? "opacity-50" : ""}`}>
+            Looks Minimal
+          </h2>
+        </Link>
+        {breadcrumb ? (
+          <p className="text-2xl">
+            {"/"} {breadcrumb}
+          </p>
+        ) : (
+          <></>
+        )}
+      </div>
 
       <div className="flex gap-6">
-        <Link href="/about" className="cursor-pointer">
-          About
-        </Link>
-        <Link href="/guides" className="cursor-pointer">
-          Guides
-        </Link>
-        <Link href="/privacy" className="cursor-pointer">
-          Privacy
-        </Link>
-        <Link href="/releases" className="cursor-pointer">
-          Releases
-        </Link>
-        <Link
-          href="https://github.com/developerbola/hashnote"
-          className="cursor-pointer flex items-center"
-        >
-          <Image
-            src={"/icons/github.svg"}
-            alt="github icon"
-            width={20}
-            height={20}
-          />
-        </Link>
+        {links.map((link) => (
+          <Link href={link.href} className="cursor-pointer" key={link.href}>
+            {link.title}
+          </Link>
+        ))}
       </div>
     </div>
   );

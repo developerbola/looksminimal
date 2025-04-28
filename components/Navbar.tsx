@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useLinks } from "@/app/context/LinksProvider";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const { links, breadcrumb } = useLinks();
@@ -44,7 +43,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className="md:hidden">
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        {isMenuOpen ? "X" : "|||"}
       </button>
 
       {/* Mobile Navigation */}

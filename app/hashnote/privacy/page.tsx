@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Privacy = () => {
   return (
     <div className="w-full flex justify-center pt-5 pb-20">
@@ -5,7 +7,7 @@ const Privacy = () => {
         {/* Header */}
         <div className="flex items-center gap-2">
           <h1 className="text-[32px]">Privacy</h1>
-          <img
+          <Image
             src="/icons/privacy.svg"
             alt="hashnote logo"
             height={35}
@@ -22,7 +24,8 @@ const Privacy = () => {
               <p>This app does not store any data on external servers.</p>
               <p>
                 All user data, including your GitHub username, token, and notes,
-                is stored locally on your device in <code className="ml-1">~/.hashnote/.</code>
+                is stored locally on your device in{" "}
+                <code className="ml-1">~/.hashnote/.</code>
               </p>
               <p>
                 We do not collect, share, or transmit your data to any third

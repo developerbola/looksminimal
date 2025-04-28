@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 import { LinksContext } from "./context";
 import { usePathname } from "next/navigation";
 
@@ -26,7 +26,7 @@ const playerLinks = [
   { href: "/player/releases", title: "Releases" },
 ];
 
-export const LinksProvider = ({ children }: { children: any }) => {
+export const LinksProvider = ({ children }: { children: ReactNode }) => {
   const path = usePathname();
   const [links, setLinks] = useState<Link[]>(homeLinks);
   const [breadcrumb, setBreadcrumb] = useState<string | null>(null);

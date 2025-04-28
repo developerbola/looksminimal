@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const Guides = () => {
   return (
     <div className="w-full flex justify-center pt-5 pb-20">
@@ -7,7 +9,7 @@ const Guides = () => {
         {/* Header */}
         <div className="flex items-center gap-2">
           <h1 className="text-[32px]">Guides for editing</h1>
-          <img
+          <Image
             src="/icons/guides.svg"
             alt="hashnote logo"
             height={35}

@@ -6,8 +6,14 @@ export async function GET() {
     {
       headers: {
         Accept: "application/vnd.github.v3+json",
-        // Optionally add a GitHub token if you're rate-limited
-        // Authorization: `token YOUR_PERSONAL_ACCESS_TOKEN`
+      },
+    }
+  );
+  const res2 = await fetch(
+    "https://api.github.com/repos/developerbola/hashnote-electron",
+    {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
       },
     }
   );
@@ -17,5 +23,8 @@ export async function GET() {
   }
 
   const data = await res.json();
-  return NextResponse.json({ stars: data.stargazers_count });
+  const data2 = await res2.json();
+  return NextResponse.json({
+    stars: data.stargazers_count + data2.stargazers_count,
+  });
 }

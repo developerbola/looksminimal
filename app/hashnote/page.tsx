@@ -11,10 +11,10 @@ const Hashnote = async () => {
   const stars = await getStars();
 
   // const handleDownload = () => {
-  //   const fileName = "Hashnote-1.0.0.dmg";
+  //   const fileName = "Hashnote.dmg";
   //   const link = document.createElement("a");
   //   link.href =
-  //     "https://github.com/developerbola/hashnoteapp/releases/download/Hashnote/Hashnote-1.0.0.dmg";
+  //     "https://github.com/developerbola/hashnote/releases/download/hashnote/Hashnote.dmg";
   //   link.download = fileName;
   //   link.target = "_blank";
   //   document.body.appendChild(link);
@@ -91,6 +91,7 @@ async function getStars() {
   );
 
   if (!res.ok) return 0;
+  console.log(res);
 
   const data = await res.json();
   return data.stargazers_count;

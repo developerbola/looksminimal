@@ -6,8 +6,8 @@ type Link = {
 };
 
 type LinksContextType = {
-  links: Link[];
-  setLinks: React.Dispatch<React.SetStateAction<Link[]>>;
+  links: Link[] | null;
+  setLinks: React.Dispatch<React.SetStateAction<Link[] | null>>;
   breadcrumb: string | null;
 };
 

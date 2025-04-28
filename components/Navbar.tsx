@@ -30,7 +30,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-6">
-        {links.map((link) => (
+        {links?.map((link) => (
           <Link
             href={link.href}
             className="cursor-pointer hover:opacity-70 transition-opacity"
@@ -49,7 +49,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="absolute top-20 left-0 right-0 bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-90 backdrop-blur-sm md:hidden py-4 px-4 flex flex-col gap-4 shadow-md">
-          {links.map((link) => (
+          {links?.map((link) => (
             <Link
               href={link.href}
               className="cursor-pointer hover:opacity-70 transition-opacity py-2 text-center"

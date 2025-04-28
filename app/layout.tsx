@@ -7,6 +7,7 @@ import { LinksProvider } from "./context/LinksProvider";
 export const metadata: Metadata = {
   title: "LooksMinimal",
   description: "Minimalistic builded apps.",
+  icons: "/favicon.svg",
 };
 
 // Fonts

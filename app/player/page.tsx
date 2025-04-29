@@ -51,7 +51,7 @@ const PlayerHero = () => {
       <PlayerDownloadButton />{" "}
       <p className="text-sm text-gray-500 max-w-sm mt-6 leading-relaxed">
         ⚠️ When you click a button and it doesn't respond the first time — this
-        isn’t a bug. The first click focuses the app window, and the second
+        isn't a bug. The first click focuses the app window, and the second
         click will activate the button.
       </p>
     </section>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Releases = () => {
   return (
-    <div className="w-full flex justify-center pt-5">
+    <div className="w-full flex justify-center pt-24">
       <div className="w-[60%]">
         <h1 className="text-[32px]">Release notes</h1>
         <div className="flex flex-col gap-5 mt-4">

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Guides = () => {
   return (
-    <div className="w-full flex justify-center pt-5 pb-20">
+    <div className="w-full flex justify-center pt-24 pb-20">
       <div className="w-[60%] flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-center gap-2">

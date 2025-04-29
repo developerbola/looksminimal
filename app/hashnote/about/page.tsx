@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="w-full flex justify-center pt-5">
+    <div className="w-full flex justify-center pt-24">
       <div className="w-[60%]">
         <div className="flex items-center gap-1">
           <h1 className="text-[32px]">Hashnote</h1>

@@ -20,11 +20,11 @@ const hashnoteLinks = [
   { href: "/hashnote/releases", title: "Releases" },
 ];
 
-const playerLinks = null;
+const playerLinks = [{ href: "/", title: "Home" }];
 
 export const LinksProvider = ({ children }: { children: ReactNode }) => {
   const path = usePathname();
-  const [links, setLinks] = useState<Link[] | null>(homeLinks);
+  const [links, setLinks] = useState<Link[]>(homeLinks);
   const [breadcrumb, setBreadcrumb] = useState<string | null>(null);
 
   useEffect(() => {

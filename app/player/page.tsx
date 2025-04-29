@@ -20,7 +20,7 @@ export default Player;
 const PlayerHero = () => {
   const stars = getStars();
   return (
-    <section className="w-full pt-14 px-6 flex flex-col items-center text-center bg-black text-white">
+    <section className="w-full pt-14 px-6 flex flex-col items-center text-center">
       <video
         src="/preview/player-preview.webm"
         autoPlay

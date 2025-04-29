@@ -11,7 +11,7 @@ const Hashnote = async () => {
   const stars = await getStars();
 
   return (
-    <section className="w-full max-w-6xl mx-auto flex items-center justify-between px-12 py-24 gap-10">
+    <section className="w-full max-w-6xl mx-auto min-h-[calc(100vh-80px)] flex items-center justify-between px-12 py-24 gap-10">
       {/* Content Side */}
       <div className="w-1/2 text-left flex flex-col items-start">
         <h1 className="text-4xl font-bold mb-6">

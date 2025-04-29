@@ -48,7 +48,7 @@ const PlayerHero = () => {
           </Link>
         </span>
       </p>
-      <PlayerDownloadButton />{" "}
+      <PlayerDownloadButton />
       <p className="text-sm text-gray-500 max-w-sm mt-6 leading-relaxed">
         ⚠️ When you click a button and it doesn&apos;t respond the first time — this
         isn&apos;t a bug. The first click focuses the app window, and the second

@@ -16,15 +16,15 @@ const PlayerDownloadButton = () => {
       },
       body: JSON.stringify({ date: date, time: cleanTime }),
     });
-    // const fileName = "Player.dmg";
-    // const link = document.createElement("a");
-    // link.href =
-    //   "https://github.com/developerbola/spotify-player/releases/download/miniplayer/Player.dmg";
-    // link.download = fileName;
-    // link.target = "_blank";
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
+    const fileName = "Player.dmg";
+    const link = document.createElement("a");
+    link.href =
+      "https://github.com/developerbola/spotify-player/releases/download/miniplayer/Player.dmg";
+    link.download = fileName;
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   return (
     <button

@@ -16,15 +16,15 @@ export default function DownloadButton() {
       },
       body: JSON.stringify({ date: date, time: cleanTime }),
     });
-    // const fileName = "Hashnote.dmg";
-    // const link = document.createElement("a");
-    // link.href =
-    //   "https://github.com/developerbola/hashnote/releases/download/hashnote/Hashnote.dmg";
-    // link.download = fileName;
-    // link.target = "_blank";
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
+    const fileName = "Hashnote.dmg";
+    const link = document.createElement("a");
+    link.href =
+      "https://github.com/developerbola/hashnote/releases/download/hashnote/Hashnote.dmg";
+    link.download = fileName;
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

@@ -2,19 +2,17 @@
 
 export default function DownloadButton() {
   const now = new Date();
-  const isoString = now.toISOString();
-  const [date, time] = isoString.split("T");
+  const gmtPlus5 = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+  const date = gmtPlus5.toISOString().split("T")[0];
+  const time = gmtPlus5.toISOString().split("T")[1].replace("Z", "");
   
-  // Remove the trailing "Z" from time
-  const cleanTime = time.replace("Z", "");
-
   const handleDownload = () => {
     fetch("https://71028e03e32bf6fc.mokky.dev/hashnote_count", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ date: date, time: cleanTime }),
+      body: JSON.stringify({ date: date, time: time }),
     });
     const fileName = "Hashnote.dmg";
     const link = document.createElement("a");

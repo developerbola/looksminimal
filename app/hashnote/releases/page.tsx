@@ -12,15 +12,17 @@ const Releases = () => {
                 {
                   date: "Apr 10, 2025",
                   version: "v1.0.0",
-                  notes:
-                    "First release for Hashnote.",
+                  notes: "First release for Hashnote.",
+                  link: "https://github.com/developerbola/hashnote-electron",
                 },
-              ].map(({ date, version, notes }) => (
+              ].map(({ date, version, notes, link }) => (
                 <div key={version} className="flex gap-10 items-start">
                   <span className="w-1/5 text-sm text-muted-foreground">
                     {date}
                   </span>
-                  <span className="w-[70px] font-mono text-sm">{version}</span>
+                  <a href={link} className="w-[70px] font-mono text-sm underline">
+                    {version}
+                  </a>
                   <p className="text-sm">{notes}</p>
                 </div>
               ))}

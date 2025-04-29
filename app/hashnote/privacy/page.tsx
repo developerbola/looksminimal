@@ -23,8 +23,7 @@ const Privacy = () => {
             <div className="space-y-2">
               <p>This app does not store any data on external servers.</p>
               <p>
-                All user data, including your GitHub username, token, and notes,
-                is stored locally on your device in{" "}
+                All user notes is stored locally on your device in{" "}
                 <code className="ml-1">~/.hashnote/.</code>
               </p>
               <p>
@@ -37,10 +36,6 @@ const Privacy = () => {
               <p>
                 The app only accesses local files required for storing your
                 settings and notes.
-              </p>
-              <p>
-                No internet connection is required, except for GitHub API
-                interactions if configured.
               </p>
             </div>
           </div>

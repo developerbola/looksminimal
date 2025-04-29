@@ -52,14 +52,13 @@ const Hashnote = async () => {
 
       {/* Image Side */}
       <div className="w-1/2 order-1">
-        <Image
-          src="/hashnote-preview.png"
-          alt="Hashnote App Preview"
-          width={600}
-          height={600}
-          priority
-          unoptimized
-          className="w-full max-w-[450px] h-auto"
+        <video
+          src="/hashnote-preview.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full max-w-[450px] h-auto rounded-xl shadow-lg"
         />
       </div>
     </section>

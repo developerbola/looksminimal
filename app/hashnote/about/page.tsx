@@ -6,22 +6,18 @@ const About = () => {
       <div className="w-[60%]">
         <div className="flex items-center gap-1">
           <h1 className="text-[32px]">Hashnote</h1>
-          <Image src="/logo.svg" alt="hashnote logo" height={50} width={50} />
+          <Image
+            src="/hashnote.svg"
+            alt="hashnote logo"
+            height={50}
+            width={50}
+          />
         </div>
         <div className="flex flex-col gap-5 mt-4">
           <p>
-            Hashnote - a minimal ElectronJS based powerful productivity app
-            designed for developers. Also non developers can use {":)"}
-          </p>
-          <p>
-            It visualizes your daily GitHub activity with an interactive heatmap
-            while allowing you to take notes, build habits, and save code
-            snippets with a powerful editor. Organized into Notes, Habits, and
-            Codes sections.
-          </p>
-          <p>
-            Hashnote helps you stay on top of your workflow with a sleek,
-            developer-friendly interface. 🚀
+            Hashnote - a minimal Tauri V1 based powerful productivity note
+            taking app designed for minimalism. You can write realtime markdown
+            supported notes and save them to your device.
           </p>
         </div>
       </div>

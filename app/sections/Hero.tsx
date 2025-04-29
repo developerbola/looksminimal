@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="flex gap-4">
         <Link href={"/hashnote"}>
           <Image
-            src={"/hashnote.svg"}
+            src={"/favicons/hashnote.svg"}
             alt="hashnote app icon"
             height={100}
             width={100}
@@ -15,7 +15,7 @@ const HeroSection = () => {
         </Link>
         <Link href="/player">
           <Image
-            src={"/player.svg"}
+            src={"/favicons/player.svg"}
             alt="player app icon"
             height={100}
             width={100}
@@ -23,10 +23,10 @@ const HeroSection = () => {
         </Link>
       </div>
       <div className="flex flex-col text-center">
-        <h1 className="text-5xl font-bold mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-b from-white to-[#adadad] bg-clip-text text-transparent">
           Discover Simple & Beautiful Apps
         </h1>
-        <p className="text-lg mb-8">
+        <p className="text-base text-[#adadad] md:text-lg lg:text-xl mb-8">
           Clean, focused tools made for minimalism lovers.
         </p>
       </div>

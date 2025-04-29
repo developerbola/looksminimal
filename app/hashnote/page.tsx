@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "LooksMinimal | Hashnote",
-  icons: "/hashnote.svg",
+  icons: "/favicons/hashnote.svg",
 };
 
 const Hashnote = async () => {
@@ -52,7 +52,7 @@ const Hashnote = async () => {
       {/* Image Side */}
       <div className="w-1/2 order-1">
         <video
-          src="/hashnote-preview.webm"
+          src="/preview/hashnote-preview.webm"
           autoPlay
           loop
           muted

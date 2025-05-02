@@ -17,14 +17,14 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <Link href="/" className="cursor-pointer">
           <h2
-            className={`text-xl md:text-2xl ${breadcrumb ? "opacity-50" : ""}`}
+            className={`text-xl md:text-2xl ${breadcrumb ? "md:opacity-50" : ""}`}
           >
-            Looks Minimal
+            Looks Minimal {breadcrumb ? "/" : ""}
           </h2>
         </Link>
         {breadcrumb ? (
           <p className="text-xl md:text-2xl truncate max-w-32 md:max-w-full hidden sm:block">
-            {"/"} {breadcrumb}
+            {breadcrumb}
           </p>
         ) : null}
       </div>

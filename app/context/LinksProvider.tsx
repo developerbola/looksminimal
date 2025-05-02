@@ -18,9 +18,13 @@ const hashnoteLinks = [
   { href: "/hashnote/guides", title: "Guides" },
   { href: "/hashnote/privacy", title: "Privacy" },
   { href: "/hashnote/releases", title: "Releases" },
+  { href: "/player", title: "Player" },
 ];
 
-const playerLinks = [{ href: "/", title: "Home" }];
+const playerLinks = [
+  { href: "/", title: "Home" },
+  { href: "/hashnote", title: "Hashnote" },
+];
 
 export const LinksProvider = ({ children }: { children: ReactNode }) => {
   const path = usePathname();

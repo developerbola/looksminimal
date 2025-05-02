@@ -50,9 +50,9 @@ const PlayerHero = () => {
       </p>
       <PlayerDownloadButton />
       <p className="text-sm text-gray-500 max-w-sm mt-6 leading-relaxed">
-        ⚠️ When you click a button and it doesn&apos;t respond the first time — this
-        isn&apos;t a bug. The first click focuses the app window, and the second
-        click will activate the button.
+        ⚠️ When you click a button and it doesn&apos;t respond the first time —
+        this isn&apos;t a bug. The first click focuses the app window, and the
+        second click will activate the button.
       </p>
     </section>
   );
@@ -68,8 +68,10 @@ async function getStars() {
       next: { revalidate: 3600 }, // revalidate every hour
     }
   );
+  console.log("res: ", res);
 
   if (!res.ok) return 0;
   const data = await res.json();
+  console.log("data: ", data);
   return data.stargazers_count;
 }

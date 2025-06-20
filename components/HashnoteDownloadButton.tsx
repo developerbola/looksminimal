@@ -17,7 +17,7 @@ export default function DownloadButton() {
     const fileName = "Hashnote.dmg";
     const link = document.createElement("a");
     link.href =
-      "https://github.com/developerbola/hashnote/releases/download/hashnote/Hashnote.zip";
+      "https://github.com/developerbola/hashnote/releases/download/hashnote/Hashnote_2.5.0.dmg";
     link.download = fileName;
     link.target = "_blank";
     document.body.appendChild(link);

@@ -1,5 +1,6 @@
 import HashnoteDownloadButton from "@/components/HashnoteDownloadButton";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -51,13 +52,11 @@ const Hashnote = async () => {
 
       {/* Image Side */}
       <div className="w-1/2 order-1">
-        <video
-          src="/preview/hashnote-preview.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full max-w-[450px] h-auto rounded-xl shadow-lg"
+        <Image
+          src={"/preview/hashnote.png"}
+          alt="hashnote perview"
+          width={500}
+          height={500}
         />
       </div>
     </section>

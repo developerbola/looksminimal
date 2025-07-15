@@ -27,7 +27,7 @@ const PlayerHero = () => {
         loop
         muted
         playsInline
-        className="w-full max-w-[350px] min-h-[200px] h-auto block mb-9 rounded-xl"
+        className="w-full max-w-[350px]  h-auto block mb-9 rounded-[22px]"
       />
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
         Spotify Mini Player

@@ -7,7 +7,7 @@ const About = () => {
         <div className="flex items-center gap-1">
           <h1 className="text-[32px]">Hashnote</h1>
           <Image
-            src="/hashnote.svg"
+            src="/favicons/hashnote.svg"
             alt="hashnote logo"
             height={50}
             width={50}

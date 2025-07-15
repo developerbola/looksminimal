@@ -6,9 +6,15 @@
   --main-background: #030712;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
 html {
   background: var(--main-background);
-  color: #fff;
 }
 
 body {

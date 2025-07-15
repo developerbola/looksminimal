@@ -27,14 +27,6 @@ const Guides = () => {
                 You can navigate back to the home screen by swiping left with
                 two fingers.
               </p>
-              <p>
-                Additionally, in the settings panel, your username and token are
-                automatically saved when you click the close button (×).
-              </p>
-              <p>
-                These features are designed to keep the interface clean and
-                minimal.
-              </p>
             </div>
           </div>
 
@@ -53,7 +45,11 @@ const Guides = () => {
             <p>
               Rename your file by updating its title inside{" "}
               <span className="font-mono font-medium"># My notes</span>. The new
-              title will be applied as the file name when you exit.
+              title will be applied as the file name when you exit.{" "}
+              <span className="text-yellow-400 !border-none">
+                ⚠️ If you remove title and back main page, editor does not save
+                your notes!
+              </span>
             </p>
           </div>
 
@@ -87,10 +83,26 @@ const Guides = () => {
           {/* Block quotes */}
           <div className="space-y-3">
             <h3 className="text-xl font-semibold">
-              Block quotes <span>{">"}</span>
+              Block quotes <span>{"> ..."}</span>
             </h3>
-            <blockquote>
-              <span>{">"} ...</span> - Block quote
+            <blockquote>Normal block quote</blockquote>
+            <blockquote className="!bg-[#162918] !border-[#17b832]">
+              <span className="!bg-[#18481c] text-[#17b832] !border-none">
+                ::
+              </span>{" "}
+              - with mark
+            </blockquote>
+            <blockquote className="!bg-[#322a17] !border-[#f8bd09]">
+              <span className="!bg-[#4f4419] text-[#f8bd09] !border-none">
+                !!
+              </span>{" "}
+              - with mark
+            </blockquote>
+            <blockquote className="!bg-[#321a1a] !border-[#ec3737]">
+              <span className="!bg-[#621618] text-[#ec3737] !border-none">
+                ??
+              </span>{" "}
+              - with mark
             </blockquote>
           </div>
 
@@ -151,6 +163,32 @@ const Guides = () => {
             <p>
               <span>some inline code here</span> - `some inline code here`
             </p>
+            <p>
+              <span className="!bg-[#4b1215] !border-none text-[#ff3b3b]">
+                ?? did
+              </span>{" "}
+              - `?? did`
+            </p>
+            <p>
+              <span className="!bg-[#353117] !border-none text-[#ffc108]">
+                !! so close
+              </span>{" "}
+              - `!! so clone`
+            </p>
+            <p>
+              <span className="!bg-[#173519] !border-none text-[#17b832]">
+                :: did not
+              </span>{" "}
+              - `:: did not`
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold">
+              Divider Line — <span>`--`</span>
+            </h3>
+            <div className="flex items-center gap-3">
+              <span>---- Something ----</span> {"  =  "} <p>—— Something ——</p>
+            </div>
           </div>
         </div>
       </div>

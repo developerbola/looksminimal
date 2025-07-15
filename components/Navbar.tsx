@@ -12,21 +12,36 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  console.log(breadcrumb);
+
   return (
     <div className="h-20 fixed w-full flex items-center justify-between px-4 md:px-8 lg:px-12 backdrop-blur z-[999]">
       <div className="flex items-center gap-2">
-        <Link href="/" className="cursor-pointer">
-          <h2
-            className={`text-xl md:text-2xl ${breadcrumb ? "md:opacity-50" : ""}`}
-          >
-            Looks Minimal {breadcrumb ? "/" : ""}
-          </h2>
-        </Link>
         {breadcrumb ? (
-          <p className="text-xl md:text-2xl truncate max-w-32 md:max-w-full hidden sm:block">
-            {breadcrumb}
-          </p>
-        ) : null}
+          <div className="flex items-center gap-2">
+            <Link href="/" className="cursor-pointer">
+              <Image
+                src={"/icons/home.svg"}
+                alt="home icon"
+                width={25}
+                height={25}
+                className="text-white"
+              />
+            </Link>
+            {"/"}
+            <p className="text-xl md:text-2xl truncate max-w-32 md:max-w-full hidden sm:block">
+              {breadcrumb}
+            </p>
+          </div>
+        ) : (
+          <h2
+            className={`text-xl md:text-2xl ${
+              breadcrumb ? "md:opacity-50" : ""
+            }`}
+          >
+            Looks Minimal
+          </h2>
+        )}
       </div>
 
       {/* Desktop Navigation */}
